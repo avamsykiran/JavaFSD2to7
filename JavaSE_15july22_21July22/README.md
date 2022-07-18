@@ -58,7 +58,7 @@ Java SE
                                         3. coinstructors can not be static.
 
                                         default constructor
-                                        parmatrized constructor
+                                        paramatrized constructor
                                         copy constructor
 
                         public class Circle {
@@ -138,15 +138,15 @@ Java SE
                         interface 'extends' another interface
                         class 'impolements' an interface
 
-                        constructor chaining is the process fo executing all the constructors of
+                        constructor chaining is the process of executing all the constructors of
                         all the super classes in order as and when an object is allocated for a class.
 
                         'this'      used to call a constructor from another constructor of the same class
-                        'super'     used to call a super class construcotr from the sub class constructor
+                        'super'     used to call a super class constructor from the sub class constructor
                         'final'
                                     final local variables
                                     final class variables
-                                    final instance variables        those variables will be trated as constants
+                                    final instance variables        those variables will be treated as constants
 
                                     final classes can not be extended any furhtur, final classes can not ahve any
                                     sub-classes.
@@ -229,9 +229,105 @@ Java SE
                             non-static methods
                             abstract methods
 
-                
+    Java.lang
 
+        Object
+                Class getClass()
+                int hashCode();
+                boolean equals(Object obj);
+                String toString();
+        System
+                in      java.io.InputStream     STD-IN      Keyboard
+                err     java.io.PrintStream     STD-ERR     VDU
+                out     java.io.PrintStream     STD-OUT     VDU
 
+                exit(int)
+                gc();
+                identityHashCode(Object);
+                ...etc
+        Math    
+
+        String
+        StringBuffer
+        StringBuilder
+        
+            for a given string, display:
+                1. character count
+                2. alpha count
+                3. digits count
+                4. word count
+                5. sentence count
+
+        Wrapper Classes
+
+    Exception Handling
+
+        Throwable
+            |- Error
+            |- Exception                <----- CHECKED
+                |- RuntimeException     <----- UNCHECKED
+
+        CHECKED Exceptions are to be handled without which compilation won't proceed,
+        UNCHECKED Exceptions are tgnored or not checked by the compiler.
     
+        CHECKED Exceptions represent abnormal situations that not in the control of the
+        application, and all that an application can do when CHECKED exceptiosn occur is to
+        go for an alternate flow, and hence we use try...catch .
 
-    
+        where we will try to do something and if not happening we will switch to an alternate
+        in the catch.
+
+            try{
+                //the code that we wnat to try executing
+            }catch(ExceptionType1 expectionObj){
+                //alternate implementation in case of a exception.
+            }catch(ExceptionType2 expectionObj){
+                //alternate implementation in case of a exception.
+            }catch(ExceptionType3 expectionObj){
+                //alternate implementation in case of a exception.
+            }catch(ExceptionType4 expectionObj){
+                //alternate implementation in case of a exception.
+            }finally{
+                //code to be exctued irrespective of an excpeiton occurs or not
+            }
+
+            try{
+                //the code that we wnat to try executing
+            }catch(ExceptionType1 | ExceptionType2 expectionObj | ExceptionType3 expectionObj){
+                //alternate implementation in case of a exception.
+            }catch(ExceptionType4 expectionObj){
+                //alternate implementation in case of a exception.
+            }finally{
+                //code to be exctued irrespective of an excpeiton occurs or not
+            }
+
+            try(//declare closable objects){
+                //the code that we wnat to try executing
+            }catch(ExceptionType1 | ExceptionType2 expectionObj | ExceptionType3 expectionObj){
+                //alternate implementation in case of a exception.
+            }catch(ExceptionType4 expectionObj){
+                //alternate implementation in case of a exception.
+            }finally{
+                //code to be exctued irrespective of an excpeiton occurs or not
+            }
+
+        UNCHECKED Exceptions can be avoided. We are not expected to handle them, we must avoid them.
+
+            public class EmployeeService {
+                public void increaseSalary(Employee emp,double amount){
+                    if(emp!=null){
+                        emp.setSalary(emp.getSalary()+amount);
+                    }
+                }
+            }
+
+            public class App{
+                public static void main(String ...args) {
+                    EmployeeService empService = new EmployeeService();
+                    Employee emp=null;
+                    empService.increaseSalary(emp,9000);
+                }
+            }
+
+        'throw'         used to raise an exception programatically
+        'throws'        used to transfer an exception from a method to its invoking method

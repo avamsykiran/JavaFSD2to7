@@ -331,3 +331,126 @@ Java SE
 
         'throw'         used to raise an exception programatically
         'throws'        used to transfer an exception from a method to its invoking method
+
+    java.time
+        LocalDate              .now(),.of(year,month,day)
+        LocalDateTime          .now(),.of(year,month,day,hour,minute,second) 
+        ZonedDateTime          .now(ZoneId)
+
+        Duration
+        Period
+
+        DateTimeFormatter
+
+    java.util
+        Scanner
+
+        Collection (i)          add(E),remove(E),iterator(),size(),isEmpty(),contains(E)
+            |
+            |-List (i)          get(int index),set(int index,E),first(),last() ...etc
+            |   represents linear data structure
+            |   index based operation are possible
+            |   allows duplicate entires and any number of nulls
+            |
+            |   Vector      growable and thread-safe array
+            |   ArrayList   growable and non-thread-safe array
+            |   LinkedList   as a doubly linked list
+            |
+            |-Set (i)
+                |-SortedSet (i)
+                represents a non-linear data strucuture
+                only one null is allowed
+                no duplicates are allowed
+
+                HashSet             does not have any order of retrival
+                LinkedHashSet       retrives in the entry order
+                TreeSet             retrives in the sorted order
+
+
+        Map (i)
+         |-SortedMap (i)
+
+        Collections (c)
+        Comnparator (i)
+        java.lang.Comparable (i) 
+
+    java.util.function
+
+        offers a long list of functional interfaces
+
+        an interface having one and only one abstract method is called a functional interface.
+
+        functional interface support lambda expressions. And lambda expression support Stream API.
+
+        suppliers               has a method that does nto take args but returns a value
+        consumers               has a method that takes arguemnt(S) but does not return
+        predicates              has a method that always returns boolean
+        other functional
+
+        a lambda expression is a shrot hand implementation of a functional interface
+
+        public MyInterface{
+            int operate(int a,int b);
+        }
+
+        public class MyInterfaceImpl implements MyInterface{
+            public int operate(int a,int b){
+                return a-b;
+            }
+        }
+
+        MyInterface obj1 = new MyInterfaceImpl();
+
+        MyInterface obj2 = new MyInterface(){
+            public int operate(int a,int b){
+                return a+b;
+            }
+        }
+
+        MyInterface obj3 = (x,y) -> x*y;
+
+    java.util.stream                STREAMs API
+
+        Stream
+                is a flow of data from a collection or array.
+
+                supports functional programming.
+
+            Arrays.stream(array)
+            listObj.stream()
+            setObj.stream()
+
+            Terminal Operators
+                forEach(Consumer)                       execute the given consumer on each element of the stream, and no return
+                collect(Collector)                      collects the values in a stream into a collection.
+                reduce(BinaryOperator)                  execute the binary operator on each pair of the elements of the stream
+                                                        and returns the final reuslt as an 'Optional' Object.
+            Intermidate Operatos
+                filter(predicate)           returns a new stream that contains only theose values of the old stream that
+                                            satisify the predicate.
+                map(UnaryOperator)          used to convert each element in the old stream into a different element 
+                                            and returns a new stream of those new elements.
+
+                distinct()                  has no args but returns a new stream of all distinct valeus of the old stream.
+
+    Assignment
+    ---------------------------------------------------------------
+
+        Define a enum called TxnType having CREDIT and DEBIT as values.
+        Define a model called 'Txn' having 
+                    txnId:int,desp:String,amount:double,type:TxnType,txnDate:LocalDate as fields
+        Create a 'List<Txn> txns' and add 20 to 25 txns in it.
+        Display the txns as below:
+        
+        TxnId       TxnDate     Desp        Credit      Debit
+        -----------------------------------------------------------------
+        101         01-Jul-22   SALARY      65000
+        102         02-Jul-22   RENT                    5000
+        103         02-Jul-22   Mobile RC               3000
+        -----------------------------------------------------------------
+        Totals                              65000       8000
+        -----------------------------------------------------------------
+        Balance                                         57000
+
+        use streams api to compute the totalCredit and totalDebit
+

@@ -434,8 +434,7 @@ Java SE
                 distinct()                  has no args but returns a new stream of all distinct valeus of the old stream.
 
     Assignment
-    ---------------------------------------------------------------
-
+   
         Define a enum called TxnType having CREDIT and DEBIT as values.
         Define a model called 'Txn' having 
                     txnId:int,desp:String,amount:double,type:TxnType,txnDate:LocalDate as fields
@@ -454,3 +453,44 @@ Java SE
 
         use streams api to compute the totalCredit and totalDebit
 
+    java.io and java.nio    IOStreams
+
+        java.io
+            InputStream
+                |-FileInputStream
+                |-ObjectInputStream
+                |-DataInputStream
+
+            OutputStream
+                |-PrintStream
+                |-FileOutputStream
+                |-ObjectOutputStream
+                |-DataOutputStream
+
+            Reader
+                |-FileREader
+                |-InputStreamReader
+                |-BufferedReader
+
+            Writer
+                |-PrintWriter
+                |-FileWriter
+
+            File
+            IOException
+            FileNotFoundException
+            Serializable
+
+        java.nio
+            Path
+            Paths
+            Files
+
+    Multi-Layer Application
+
+        dao             Data Access Object      Persistence Logic       insert/update/delete/retrive data 
+        service                                 Bussiness Logic         computations/validations/ui-dao
+        ui              User Interface          Presentation Logic      accpet data/instruction and display data
+
+
+        

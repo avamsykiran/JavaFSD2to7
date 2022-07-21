@@ -493,4 +493,13 @@ Java SE
         ui              User Interface          Presentation Logic      accpet data/instruction and display data
 
 
+    Java Database Connectivity
+
+        1. Load A Driver        Optional since JDBC 4.0     
+        2. Create a Connection through DriverManager.getConnection(url,uid,pwd)
+        3. a) Statement
+           b) PreparesStatement
+           c) CallableStatement
+
+
         

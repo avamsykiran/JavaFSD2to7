@@ -3,6 +3,16 @@ package com.cts.incomestatement.model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+/*
+ CREATE TABLE txns (
+  txnId INT PRIMARY KEY AUTO_INCREMENT,
+  desp VARCHAR(40) NOT NULL,
+  amount DOUBLE NOT NULL,
+  txndate DATE NOT NULL,
+  type VARCHAR(10) NOT NULL
+ );
+ */
+
 public class Txn implements Serializable{
 	private int txnId;
     private String desp;

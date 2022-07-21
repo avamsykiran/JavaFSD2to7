@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.cts.incomestatement.dao.TxnDao;
-import com.cts.incomestatement.dao.TxnDaoFileSystemImpl;
+import com.cts.incomestatement.dao.TxnDaoJdbcImpl;
 import com.cts.incomestatement.exception.InvalidTxnException;
 import com.cts.incomestatement.exception.OperationFailedException;
 import com.cts.incomestatement.model.Txn;
@@ -16,7 +16,8 @@ public class TxnServiceImpl implements TxnService {
 	private TxnDao txnDao;
 
 	public TxnServiceImpl() throws OperationFailedException {
-		this.txnDao = new TxnDaoFileSystemImpl();
+		//this.txnDao = new TxnDaoFileSystemImpl();
+		this.txnDao = new TxnDaoJdbcImpl();
 	}
 
 	private boolean isValid(Txn txn) throws InvalidTxnException {

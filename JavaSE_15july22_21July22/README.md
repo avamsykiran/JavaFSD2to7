@@ -492,7 +492,6 @@ Java SE
         service                                 Bussiness Logic         computations/validations/ui-dao
         ui              User Interface          Presentation Logic      accpet data/instruction and display data
 
-
     Java Database Connectivity
 
         1. Load A Driver        Optional since JDBC 4.0     

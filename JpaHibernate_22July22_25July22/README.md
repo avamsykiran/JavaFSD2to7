@@ -72,12 +72,50 @@ JPA with Hibernate
 
                                 Movie <--one-to-Many--> Characters <--Many-to-One---> Artist
 
-
             ORM - Object Relational Mapping
 
             JPA - Java Persistence API is a specification of Java for the concept ORM.
-
             
+                    @Entity             class level
+                    @Table(name="")     class level
+
+                    @Id                 field level
+                    @GeneratedValue     field level
+
+                    @Column             field level
+                    @Transiant          field level
+
+                    @Inheretence           class level
+                    @DiscriminatorColumn   class level
+                    @DiscriminatorValue    class level
+
+                    @OneTOOne           field level
+                    @OneTOMany          field level
+                    @ManyToOne          field level
+                    @JoinColumn         field level
+
+                    @Embedable          class level
+                    @Embeded            field level
+
+                    Persistence.createEntityManagerFactory("name of a persistence unit")
+                        EntityManagerFactory.createEntityManager()
+                                EntityManager::
+                                                persist(entity)                     insert
+                                                merge(entity)                       update
+                                                remove(entity)                      delete
+                                                find(id,class)                      retriving an entity by id
+                                                createQuery("JPQL query")
+                                                    Query
+                                                    TypedQuery
+
             Hibernate
-            iBates
-            ..etc.,
+                        is one of the many implementations of JPA
+
+                SessionFactory.createSession()
+                    Session::
+                                save(entity)
+                                merge(entity)
+                                delete(entity)
+                                get(id,class)
+                                load(id,class)
+                                createQuery("hql query")

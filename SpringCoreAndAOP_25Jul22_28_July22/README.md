@@ -138,6 +138,54 @@ Spring Core, Spring Context
 
             @Scope("singleton|prototype|session|request|global-session")    applied on a component class
 
+            Bean Life Cycle Methods
+                @PostConstruct
+                @PreDestroy
+
+Spring Boot
+
+    is a spring framework module that offers
+         AutoConfiguration and Rapid Application Development and Embeded Servers.
 
 
+    Spring Core                 Bean Cofniguration class is needed, @Configuaration and @ComponentScan
+    Spring Context              ApplicationContext has to be created
+    Spring SpEL                 application.properties and @ProeprtySource
+    
+    Spring AOP                  config a bean for AspectJ annotation provider and Aspects and advices
+    Spring Data JPA             TransactionManagemtn and Datasource objects
+    Spring Web                  Enable WEB MVC, DispatcherServlet, ViewEngines ..etc.,
+    Spring Test                 Testing Environemtn and Database mock setup
+    Spring Security             Authorization type, Roels and USer credentials ...etc.,
 
+    These configurations are by default provided if tehse modules are used on top of Spring Boot.
+    It is also possible to override the default configs if needed.
+
+    And thus eliminates the time spent on configs and config testing and debuggind that enable RAD.
+
+
+    Spring Boot projects are called Spring starter projects
+
+    1. Spring Tool Suite - Spring Starter Project wizard
+    2. Spring Initializer from https://start.spring.io
+    3. Spring Boot CLI
+
+    @SpringBootApplication  =
+                                @Configuration
+                                @ComponentScan("theCurrentPackageAsBasePackage")
+                                @PropertySource("classpath:application.properties")
+
+    SpringApplication.run(SpringIocBootDemoApplication.class, args);
+        1. Creates an ApplicationContext
+        2. Execute all Spring Runners in order if any
+        3. Starts the embeded Servers if any
+        4. ApplicationContext is destroyed and Application is Terminated.
+
+    
+    Spring Runners facilitate usage of ApplicationContext and perform any console based operations before
+    an embeded server might start.
+        CommandLineRunner       void run(String a[])
+        ApplicationRunner       void run(ApplicationArgs arg)
+
+    @Order
+    

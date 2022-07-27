@@ -1,4 +1,4 @@
-package com.cts.spring.ioc.demo.ui;
+package com.cts.spring.ioc.boot.demo.ui;
 
 import java.util.Scanner;
 
@@ -9,9 +9,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import com.cts.spring.ioc.demo.service.ConversionService;
-import com.cts.spring.ioc.demo.service.Counter;
-import com.cts.spring.ioc.demo.service.GreetService;
+import com.cts.spring.ioc.boot.demo.service.ConversionService;
+import com.cts.spring.ioc.boot.demo.service.Counter;
+import com.cts.spring.ioc.boot.demo.service.GreetService;
 
 @Component
 public class HomeUI {

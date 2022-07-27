@@ -103,6 +103,7 @@ Spring Core, Spring Context
 
             @Configuration
             @ComponentScan("basePackage")
+            @PropertySource("proeprtiesFile.properties")
             public class AppBeanConfig{
 
                 @Bean
@@ -130,4 +131,13 @@ Spring Core, Spring Context
             @Qualifier("baenName")
             
                 autowiring by name      a bean is ammped to a field through bean-name.
+
+            @Value("SpEL")              is uysed to inject values into a String or primitive field
+                                        ${property.key}
+                                        #{javaExpression}
+
+            @Scope("singleton|prototype|session|request|global-session")    applied on a component class
+
+
+
 

@@ -4,12 +4,18 @@ import java.util.Scanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import com.cts.spring.ioc.demo.service.ConversionService;
+import com.cts.spring.ioc.demo.service.Counter;
 import com.cts.spring.ioc.demo.service.GreetService;
 
 @Component
 public class HomeUI {
+	
+	@Value("${app.title:Spring IOC Demo Application}")
+	private String appTitle;
 	
 	@Autowired
 	private Scanner scan;
@@ -21,9 +27,21 @@ public class HomeUI {
 	@Autowired
 	@Qualifier("greetServiceTimeBasedImpl")
 	private GreetService greetService2;
+	
+	@Autowired
+	private ConversionService d2r;
+	
+	@Autowired
+	private Counter c1;
+
+	@Autowired
+	private Counter c2;
+	
+	@Autowired
+	private Counter c3;
 
 	public void run() {
-		System.out.println("Spring IOC Demo Application");
+		System.out.println(appTitle);
 		System.out.println("--------------------------------------------------------------");
 		
 		System.out.print("User Name? ");
@@ -31,5 +49,17 @@ public class HomeUI {
 		
 		System.out.println(greetService1.greet(userName));
 		System.out.println(greetService2.greet(userName));
+	
+		System.out.print("Dollars? ");
+		double dollars = scan.nextDouble();
+		double rupees = d2r.convert(dollars);
+		double dollars2 = d2r.reverseConvert(rupees);
+		
+		System.out.println(rupees);
+		System.out.println(dollars2);
+		
+		System.out.println(c1.next());
+		System.out.println(c2.next());
+		System.out.println(c3.next());
 	}
 }

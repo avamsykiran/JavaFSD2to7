@@ -189,3 +189,33 @@ Spring Boot
 
     @Order
     
+Spring AOP
+
+    is another spring framework modules to support Aspect Oriented Programming.
+
+    Aspect is said to be an operation that is parellel curcial and indpendent of the actual applciation
+    logic.
+
+        Logging
+        Auditing
+        Transaction Managmeent
+        Authentication and Authorization.
+        ....etc
+
+    trying to execute a method (aspect) befoe / after the execution of another method (bussiness logic/joint point).
+
+    Join Point      is theat mehtod of an application at which an aspect must execue.
+
+    Point Cut       is an expression that selects a join point for a given aspect.
+
+    Advice          is the one that decide4 when shoudl the aspect meet the join point like
+        after
+        before
+        around
+        after return
+        after throw
+        ...etc
+
+    
+    
+

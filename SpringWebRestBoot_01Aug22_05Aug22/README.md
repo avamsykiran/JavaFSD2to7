@@ -3,7 +3,7 @@ Spring Web
     is also a spring framework module that support both MVC Dynamic Web applications
     and REST webservices.
 
-    Model       is data taht flows from a View to a controller or vice-versa
+    Model       is data that flows from a View to a controller or vice-versa
 
     View        is any html/jsp/thymeleaf page that is used as User Interface.
 
@@ -108,6 +108,4 @@ Spring Web
 
                 View = "/pages/emp-list-page.jsp"
 
-            
-
-
+  

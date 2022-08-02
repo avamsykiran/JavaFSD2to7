@@ -97,7 +97,7 @@ Spring Web
 
             Spring boot auto-configs a bean of InternalResourceViewResolver
 
-                InternalResourceViewResolver  has two fields  prefix and suffix
+                InternalResourceViewResolver  has two fields prefix and suffix
 
                 VIEW = prefix + viewName + suffix.
 
@@ -109,3 +109,15 @@ Spring Web
                 View = "/pages/emp-list-page.jsp"
 
   
+Spring Data JPA
+
+    is another spring framework module that provides dynamic automatic implmentation of
+    repositories
+
+        CrudRepository
+            | - JpaRepository
+                    List<Entity> findAll()
+                    Optional<Entity> findById(id)
+                    boolean existsById(id)
+                    Entity save(entity)
+                    void deleteById(id)

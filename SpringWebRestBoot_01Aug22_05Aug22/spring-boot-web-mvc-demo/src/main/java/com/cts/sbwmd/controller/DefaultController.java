@@ -2,18 +2,19 @@ package com.cts.sbwmd.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class DefaultController {
 
-	/*
-	 * http://localhost:7777
-	 * http://localhost:7777/
-	 * http://localhost:7777/home
-	 */
 	@GetMapping({"","/","/home"})
 	public String defaultUrlHandler() {
 		return "home-page";
 	}
-	
+
+	@RequestMapping("/header")
+	public ModelAndView headerUrlHandler() {
+		return new ModelAndView("header-segment", "webTitle", "Income Statement Portal");
+	}
 }

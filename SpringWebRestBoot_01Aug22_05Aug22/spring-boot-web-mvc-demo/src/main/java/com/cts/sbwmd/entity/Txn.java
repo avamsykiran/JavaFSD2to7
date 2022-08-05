@@ -8,6 +8,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PastOrPresent;
+import javax.validation.constraints.PositiveOrZero;
+import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 @Entity
 @Table(name="txns")
@@ -16,10 +24,18 @@ public class Txn implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long txnId;
+	@NotBlank(message ="Description can not be left blank")
+	@Size(min=4,max=50,message="Description is expected to 4 chars atleast and 50 chars at max.")
     private String desp;
+	@NotNull(message="Trtansaction amount can not be left unfilled")
+	@PositiveOrZero(message="Transaction Amount can not be negative")
     private Double amount;
+	@NotNull(message="Trtansaction Date can not be left unfilled")
+	@PastOrPresent(message="Transaction Date can not be a future date")
+	@DateTimeFormat(iso=ISO.DATE)
     private LocalDate txndate;
-    private TxnType type;
+	@NotNull(message="Trtansaction Type can not be left unfilled")
+	private TxnType type;
     
     public Txn() {
 		// TODO Auto-generated constructor stub

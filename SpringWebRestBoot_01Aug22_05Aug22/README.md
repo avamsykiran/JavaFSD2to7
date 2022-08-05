@@ -108,6 +108,14 @@ Spring Web
 
                 View = "/pages/emp-list-page.jsp"
 
+        @Controller
+        @RequestMapping
+            @GetMapping
+            @PostMapping
+        @RequestParam
+        @ModelAttribute
+        @Valid
+
   
 Spring Data JPA
 

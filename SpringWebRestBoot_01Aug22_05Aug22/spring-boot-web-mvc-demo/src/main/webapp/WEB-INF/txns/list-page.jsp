@@ -14,7 +14,7 @@
 					<p><strong>No records to display</strong>
 				</c:when>
 				<c:otherwise>
-					<table style="border:1px solid #000000; width:80%;margin:auto;">
+					<table style="border:1px solid #000000; width:95%;margin:auto;">
 						<thead>
 							<tr>
 								<th>Txn#</th>
@@ -28,12 +28,19 @@
 						<tbody>
 							<c:forEach var="t" items="${txns }">
 								<tr>
-									<td style="text-align:right">${t.txnId}</td>
+							                                                                                                                                                                                                                             		<td style="text-align:right">${t.txnId}</td>
 									<td style="text-align:center">${t.txndate }</td>
 									<td style="text-align:left">${t.desp }</td>
 									<td style="text-align:right">${t.type==TxnType.CREDIT?String.valueOf(t.amount):"" }</td>
 									<td style="text-align:right">${t.type==TxnType.DEBIT?String.valueOf(t.amount):"" }</td>
-									<td></td>
+									<td style="text-align:center">
+										<a 
+										style="display:inline-block;margin:2px;padding:5px;text-decoration:none;border:1px solid #000000" 
+										href="/txns/delete?id=${t.txnId }">delete</a>
+											<a 
+										style="display:inline-block;margin:2px;padding:5px;text-decoration:none;border:1px solid #000000" 
+										href="/txns/edit?id=${t.txnId }">edit</a>
+									</td>
 								</tr>
 							</c:forEach>
 						</tbody>

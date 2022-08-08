@@ -37,7 +37,7 @@ Spring Web
     Struts, Spring Web are the most used frameworks for WEB MVC apps.
 
     Spring Web follows Single FrontController MVC design patterm..
-
+                                                                                                    (BROWSER)
     database <-->  Repos <-Entities-> Services <-Model-> Controllers <---> FrontController <---REQ-- Client <-> endUser 
                                                                             |                           ↑
                                                                             |                           |
@@ -129,3 +129,41 @@ Spring Data JPA
                     boolean existsById(id)
                     Entity save(entity)
                     void deleteById(id)
+
+Spring Web REST
+
+    rest api is a web service based on http protocol.
+
+    a web service is a 'bussiness logic' hosted centrally to be consumed by
+    a varaity of ui apps.
+
+                                                                                                    (Insomnia/Postman)
+                                                                                                    (Angular APP)
+                                                                                                    (ReactJS APP)
+                                                                                                    (Andriod APP)
+    database <-->  Repos <-Entities-> Services <-Model-> RestControllers <-> FrontController <---REQ-- Rest-Client <-> endUser 
+                                                                            |                           ↑
+                                                                            |                           |
+                                                                        (model) ----RESP (xml/json)---->|
+
+    REST api standards
+
+        Resourece is Employee then /emps can be the end point
+
+                                                                    Http Status Codes
+        OPERATION      EndPoint     Http-Method         onSuccess                       onFailure
+                                                                               Client Side        Server Side
+        ------------------------------------------------------------------------------------------------------------
+        CREATE         /emps        POST                201 - CREATE        400 - BAD REQUEST   500 - INTERNAL SERVER ERROR 
+        UPDATE         /emps        PUT                 203 - ACCEPTED      400 - BAD REQUEST   500 - INTERNAL SERVER ERROR
+        RETRIVE        /emps        GET                 200 - OK            404 - NOT FOUND     500 - INTERNAL SERVER ERROR
+                       /emps/101    GET                 200 - OK            404 - NOT FOUND     500 - INTERNAL SERVER ERROR 
+        DELETE         /emps/101    DELETE              202 - NO CONTENT    404 - NOT FOUND     500 - INTERNAL SERVER ERROR
+
+
+    @RestController     =   @Controller + @ResponseBody (it means that no view, take data directly)
+    @PathVariable
+    @RequestBody
+
+    ResponseEntity
+        response-body and http-status

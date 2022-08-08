@@ -1,4 +1,4 @@
-<%@page import="com.cts.sbwmd.entity.TxnType"%>
+<%@page import="com.cts.sbwrd.entity.TxnType"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <html>
 	<head>

@@ -1,4 +1,4 @@
-<%@page import="com.cts.sbwmd.entity.TxnType"%>
+<%@page import="com.cts.sbwrd.entity.TxnType"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <html>
 	<head>

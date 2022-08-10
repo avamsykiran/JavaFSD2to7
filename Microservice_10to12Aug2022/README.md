@@ -83,8 +83,50 @@ Microservices
                     profiles    <--FeignClient-->    txns    <--FeignClient-->   statement
                     (profileDB)                     (txnDB)
 
+        5. Distributed Tracing
 
 
+                                                                            AngularApp/ReactApp/AndriodApp
+                                                                                        ↓↑
+            (Eureka Discovery Service)                                         (spring-cloud api-gateway)
+                discovery                                                         api-gateway  
+                    ↓↑                                                                  ↓↑
+                    -----------------------------------------------------------------------
+                        ↑↓                            ↑↓                            ↑↓
+                    profiles    <--FeignClient-->    txns    <--FeignClient-->   statement
+                    (profileDB)                     (txnDB)
+                        ↑↓                            ↑↓                            ↑↓
+                    -----------------------------------------------------------------------
+                    ↓↑
+                tracing-service
+                  (sipkin)
+
+            6. External Configuration
+
+
+                                                                            AngularApp/ReactApp/AndriodApp
+                                                                                        ↓↑
+            (Eureka Discovery Service)                                         (spring-cloud api-gateway)
+                discovery                                                         api-gateway  
+                    ↓↑                                                                  ↓↑
+                    -----------------------------------------------------------------------
+                        ↑↓                            ↑↓                            ↑↓
+                    profiles    <--FeignClient-->    txns    <--FeignClient-->   statement
+                    (profileDB)                     (txnDB)
+                        ↑↓                            ↑↓                            ↑↓
+                    -----------------------------------------------------------------------
+                    ↓↑                                                                   ↓↑
+                tracing-service                                                        config-service
+                  (sipkin)                                                          (spring cloud config service)
+                                                                                                        ||
+                                                                                                        ||
+                                                                                                        ↓↑
+                                                                                                        GitRepo
+                                                                                                            discovery.proeprties
+                                                                                                            gatway.properties
+                                                                                                            profiles.properties
+                                                                                                            txns.properties
+                                                                                                            statement.properties
 
 Telecome Custoemr Portal
     1. Each customer has to register

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript execution</title>
+    <script src="main.js"></script>
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body onload="displayItems()">
+    <h3>Inventory Management System</h3>
+
+    <div id="content">
+
+        <table>
+            <caption><strong>Stock</strong></caption>
+            <thead>
+                <tr>
+                    <th>Item#</th>
+                    <th>Name</th>
+                    <th>Unit</th>
+                    <th>Rate</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <th><input type="number" placeholder="Item Id" id="itemId" /></th>
+                    <th><input type="text" placeholder="Item Name" id="itemName" /></th>
+                    <th><input type="text" placeholder="Item Unit" id="itemUnit" /></th>
+                    <th><input type="number" placeholder="Item Rate" id="itemRate" /></th>
+                    <th><button type="button" onclick="addItem()" >Add </button></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <div id="cart">
+        <table>
+            <caption><strong>Cart</strong></caption>
+            <thead>
+                <tr>
+                    <th>Item#</th>
+                    <th>Quantity</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</body>
+
+</html>

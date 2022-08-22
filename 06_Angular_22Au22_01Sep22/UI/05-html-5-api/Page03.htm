@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WebStorage</title>
+        <script lang="javascript">
+          
+          let friends=[];
+
+          const loadFriends = () => {
+            if(sessionStorage.getItem("frds")){
+                friends = JSON.parse(sessionStorage.getItem("frds"));
+                friends.forEach(addToList);
+            }
+          };
+
+          const addToList = friendName => {
+            let friendItem = document.createElement("li");
+            friendItem.textContent=friendName;
+            document.querySelector("#friendsList").appendChild(friendItem);
+          }
+
+          const addFriend = () => {
+            let friend = document.querySelector("#fnm").value;
+            addToList(friend);
+            friends.push(friend);
+            sessionStorage.setItem("frds",JSON.stringify(friends));
+            document.querySelector("#fnm").value="";
+          };
+        </script>
+    </head>
+    <body onload="loadFriends()">
+       <div>
+           <label>Friend Name: <input type="text" id="fnm"/></label>
+           <button type="button" onclick="addFriend()">ADD</button>
+       </div>
+
+        <ol id="friendsList">
+        </ol>
+    </body>
+</html>

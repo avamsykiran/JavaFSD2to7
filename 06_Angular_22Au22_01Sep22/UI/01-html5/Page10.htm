@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Google Search Form</title>
+    </head>
+    <body>
+        <h3>form </h3>
+        
+        <!-- a form with multiple submit buttons-->
+        <!-- we want the form to submit to different urls when clicked on different submits-->
+
+        <form>
+            <div>
+                <label>What do you want to search for? </label>
+            </div> 
+            <div>
+                <input type="text" name="q" required/>
+            </div>
+            <div>
+                <button type="submit" formaction="https://www.google.com">Search</button>
+                <button type="submit" formaction="https://images.google.com">Search for image</button>
+                <button type="submit" formaction="https://maps.google.com">Search on map</button>
+            </div>
+        </form>
+    </body>
+</html>

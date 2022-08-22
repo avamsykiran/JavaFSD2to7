@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Geo Location</title>
+        <script lang="javascript">
+            const locate = () => {
+                window.navigator.geolocation.getCurrentPosition(
+                    position => {
+                        document.querySelector("#lat").textContent=position.coords.latitude;
+                        document.querySelector("#lng").textContent=position.coords.longitude;
+                    },
+                    error => {
+                        window.alert(error.message);
+                    }
+                );
+            };
+        </script>
+    </head>
+    <body>
+        <button type="button" onclick="locate()">Locate Me</button>
+
+        <p>
+            Latitude: <strong><span id="lat"></span></strong>. <br />
+            Longitude: <strong><span id="lng"></span></strong>. 
+        </p>
+    </body>
+</html>

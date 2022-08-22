@@ -1,0 +1,41 @@
+h1,h2,h3,h4,h5,h6{
+    text-align: center;
+}
+
+#content,#cart{
+    margin:0.25%;
+    display: inline-flex;
+}
+
+#content{
+    width:55%;
+}
+
+#cart{
+    width:25%;
+}
+
+#content>table,#cart>table{
+    width: 90%;
+    margin:auto;
+    border:0.5px solid black;
+    padding: 1%;
+}
+
+input{
+    width:60%;
+}
+
+#content>table td,#content>table th{
+    padding: 0.5%;
+    margin: 0.5%;
+    border-bottom:0.5px solid black;
+}
+
+#content>table tr:last-child td{
+    border-bottom:0px;
+}
+
+#content>table td:nth-child(1),#content>table td:nth-child(4){
+    text-align: right;
+}

@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>css operators </title>
+    <style>
+        div {
+            border: 1px solid black;
+            padding:10px;
+        }
+
+        section{
+            padding:10px;
+            border: 2px dashed #000000;
+        }
+
+        div p {
+            background-color: #0f0f0f;
+            color: #ffffff;
+        }
+
+        div>p {
+            padding: 10px;
+        }
+
+        div+p{
+            text-align:center;
+        }
+        div~p{
+            border:1px dotted black;
+        }
+    </style>
+</head>
+
+<body>
+    <p>A test para.</p>
+    <div>
+        <p>A test para.</p>
+        <section>
+            <p>A test para.</p>
+            <p>A test para.</p>
+        </section>
+        <p>A test para.</p>
+    </div>
+    <p>A test para.</p>
+    <p>A test para.</p>
+    <p>A test para.</p>
+</body>
+
+</html>

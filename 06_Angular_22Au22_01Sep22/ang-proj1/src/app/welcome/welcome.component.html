@@ -1,0 +1,31 @@
+<section class="welcome">
+    <p>Hello <strong>{{userName}}</strong>! we welcome you!</p>
+
+    <form>
+        <div>
+            <label>User Name: </label>
+            <input type="text" name="unm" [(ngModel)]="userName" />
+        </div>
+        <div>
+            <label>Width 
+                <input type="range" min="20" max="500" name="r" [(ngModel)]="logoWidth" />
+                {{logoWidth}} px.
+            </label>
+            <label>
+                <input type="checkbox" name="cb1" [(ngModel)]="isCentered" />Center
+            </label>
+            <label>
+                <input type="checkbox" name="cb2" [(ngModel)]="isBorderApplied" />Apply Border
+            </label>
+        </div>
+    </form>
+
+    <div>
+        <img 
+            [src]="logos[logoIndex]"
+            (click)="toggle()"
+            [style.width.px]="logoWidth"
+            [class.centered]="isCentered"
+            [class.bordered]="isBorderApplied" />
+    </div>
+</section>

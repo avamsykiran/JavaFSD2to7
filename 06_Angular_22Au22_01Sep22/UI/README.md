@@ -313,7 +313,6 @@ CSS 3
                 
                 <link href="fileName.css" rel="stylesheet" />
 
-
     CSS - unit of measure
     ------------------------------------
 
@@ -630,7 +629,6 @@ JavaScript (ES6)
                 () => { to respond if job got error}
             );
 
-
             define a class that takes a 'count' as a field in its constructor,
             it has to offer a function generateRandomNumbers which returns a promise.
             the generateRandomNumbers function shall generate 'count' number of random
@@ -638,7 +636,6 @@ JavaScript (ES6)
             These numbers must be printed asynchronously and the promise shall emit the
             sum of the random number after resolving and shall reject with an error if the
             count is negative...
-
 
     an assignment
     --------------------

@@ -1,0 +1,8 @@
+.pipesDemo{
+    padding:10px;
+}
+
+.pipesDemo>div{
+    columns: 3;
+    border-bottom: 1px solid #000000;
+}

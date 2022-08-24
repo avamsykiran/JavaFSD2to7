@@ -1,0 +1,8 @@
+.centered{
+    display: block;
+    margin: auto;
+}
+
+.bordered{
+    border: 1px solid #000000;
+}

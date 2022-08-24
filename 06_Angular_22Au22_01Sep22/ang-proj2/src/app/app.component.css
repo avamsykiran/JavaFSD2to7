@@ -1,0 +1,22 @@
+.root {
+    background-color: #000000;
+    padding:2px;
+    margin:0px;
+    color: #ffffff;
+}
+
+.root>nav>a{
+    color: #ffffff;
+    font-weight: bolder;
+    display: inline-block;
+    text-decoration: none;
+    padding:4px;
+    margin:5px;
+    border: .5px solid #ffffff;
+    border-radius: 10px;
+}
+
+.root>nav>a:hover,.active{
+    color: #000000;
+    background-color: #ffffff;    
+}

@@ -246,7 +246,42 @@ Angular
             class ConvertToWordsPipe{}
 
         Services
+            is used to hold bussiness logic., like
+            validations, caliculations, rest-api communication ...etc.,
+
+            services are injectable into components,directives,pipes and 
+            other services.
+
+            ng g service serviceName --skip-tests
+
             @Injectable({
                 providedIn:'root'
             })
             class EmployeeService{}
+
+    Routing
+    ---------------------------------------------
+
+        allows us to display a component based on the path in the url.
+
+        RouterModule     from    '@angular/router' file
+
+            Route       {
+                            path:'',
+                            pathMatch:'full|startsWith',
+                            redirectTo:'',
+                            component:ComponentName,
+                            children:[]
+                        }
+
+            Routes      Route[]
+
+            forRoot(routes)
+
+            router-outlet       component
+
+            routerLink          attribute directive to be used only on 'a' tags instead of href
+            routerLinkActive    attribute directive that takes a 'css-class' to be applied on the
+                                current route.
+
+            Router              service used to navigate programatically.

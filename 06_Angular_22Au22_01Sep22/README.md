@@ -207,12 +207,39 @@ Angular
                 
 
         Directives
-            @Directive({
-                selector:''
-            })
-            class HighlighterDirective{}
+
+            Components
+                user defiend html eleemnts (tags)
+
+            Attribute Directives
+                user defiend html attributes
+                ngModel,click,dblclick ..etc.,
+
+            Structural Directives
+                is an attribute directive that controls the apperence of an element
+                *ngIf
+                *ngFor
+
+            Custome Directives
+                 ng g directive DirectiveName --skip-tests
+
+                @Directive({
+                    selector:''
+                })
+                class HighlighterDirective{}
 
         Pipes
+            is used to transform the value into another just before rendering.
+
+            lowercase
+            uppercase
+            titlecase
+            number
+            currency
+            date
+
+            ng g pipe PipeName --skip-Tests
+            
             @Pipe({
                 name:''
             })

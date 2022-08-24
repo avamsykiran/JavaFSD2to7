@@ -1,0 +1,16 @@
+<section class="directiveDemo">
+    <form (ngSubmit)="add()">
+        <label>Friend Name:
+            <input type="text" name="fnm" [(ngModel)]="friendName" required />
+        </label>
+        <button>ADD</button>
+    </form>
+
+    <p *ngIf="friends.length==0">
+        <strong>No Friends To Display</strong>
+    </p>
+
+    <ol *ngIf="friends.length>0">
+        <li *ngFor="let f of friends" [appApplyColor]="f">{{f}}</li>
+    </ol>
+</section>

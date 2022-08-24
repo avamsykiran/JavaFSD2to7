@@ -1,0 +1,46 @@
+<section class="pipesDemo">
+    <h4>String pipes</h4>
+    <div>
+        <strong>Original</strong>:{{strData}} <br />
+        {{strData|uppercase}} <br />
+        {{strData|lowercase}} <br />
+        {{strData|titlecase}} <br />
+    </div>
+
+    <h4>Currency pipes</h4>
+    <div>
+        <strong>Original</strong>:{{numData}} <br />
+        {{numData|currency:'INR'}} <br />
+        {{numData|currency:'USD'}} <br />
+        {{numData|currency:'AUD'}} <br />
+        {{numData|currency:'JPY'}} <br />
+        {{numData|currency:'GBP'}} <br />
+        {{numData|currency:'XYZ'}} <br />
+    </div>
+
+    <h4>Number pipes</h4>
+    <div>
+        <strong>Original</strong>:{{numData}} <br />
+        {{numData|number:'2.0-0'}} <br />
+        {{numData|number:'12.2-4'}} <br />
+        {{numData|number:'6.2-2'}} <br />
+        {{numData|number:'5.4-6'}} <br />
+    </div>
+
+    <h4>Date Pipes</h4>
+    <div>
+        <strong>Original</strong>:{{dateData}} <br />
+        {{dateData|date:'short'}} <br />
+        {{dateData|date:'long'}} <br />
+        {{dateData|date:'dd-MM-yy'}} <br />
+        {{dateData|date:'dd-MMM-yyyy'}} <br />
+        {{dateData|date:'dd-MMMM-yyyy hh:mm:ss a'}} <br />
+        {{dateData|date:'dd-MMMM-yyyy HH:mm:ss'}} <br />
+    </div>
+
+    <h4>Custom Pipe</h4>
+    <div>
+        <strong>Original</strong>:{{numData}} <br />
+        {{numData|intoWords}} <br />
+    </div>
+</section>

@@ -1,0 +1,18 @@
+<section class="nss">
+    <form (ngSubmit)="formSubmitted()">
+        <label>Lower Bound:
+            <input type="number" name="op1" [(ngModel)]="lb" />
+        </label>
+        <label>Upper Bound:
+            <input type="number" name="op2" [(ngModel)]="ub" />
+        </label>
+        <button [disabled]="!isJobDone">Generate</button>
+    </form>
+
+    <p *ngIf="err">
+        <strong>{{err}}</strong>
+    </p>
+    <div *ngIf="results && results.length>0">
+        <span *ngFor="let n of results">{{n}} </span>
+    </div>
+</section>

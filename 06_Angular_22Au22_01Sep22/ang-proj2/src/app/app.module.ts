@@ -9,12 +9,15 @@ import { DirectiveDemoComponent } from './directive-demo/directive-demo.componen
 import { ApplyColorDirective } from './apply-color.directive';
 import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 import { IntoWordsPipe } from './into-words.pipe';
+import { NumberSeriesComponent } from './number-series/number-series.component';
+import { NumberSeriesGroupComponent } from './number-series-group/number-series-group.component';
 
 const routes :Routes = [
   {path:'',pathMatch:'full',redirectTo:'/welcome'},
   {path:'welcome',component:WelcomeComponent},
   {path:'dd',component:DirectiveDemoComponent},
-  {path:'pd',component:PipesDemoComponent}
+  {path:'pd',component:PipesDemoComponent},
+  {path:'nsg',component:NumberSeriesGroupComponent}
 ];
 
 @NgModule({
@@ -24,7 +27,9 @@ const routes :Routes = [
     DirectiveDemoComponent,
     ApplyColorDirective,
     PipesDemoComponent,
-    IntoWordsPipe
+    IntoWordsPipe,
+    NumberSeriesComponent,
+    NumberSeriesGroupComponent
   ],
   imports: [
     BrowserModule,

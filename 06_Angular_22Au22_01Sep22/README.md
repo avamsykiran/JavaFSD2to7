@@ -285,3 +285,36 @@ Angular
                                 current route.
 
             Router              service used to navigate programatically.
+
+    RxJS
+    -----------------------------------------------------------------
+
+        Reactive Javascript
+        'IT IS NOT REACTJS'
+
+        let job = observer => {
+
+            observer.next(val); //emiting values while in the async job.
+            observer.error(err); //raise an error
+            observer.complete(); //indicate the the job is done or closed.
+
+        };
+        let ob = new Observable(job);
+
+        ob.subcribe({
+            next: val => { //to receive the val emitted},
+            error: err => {//handle the err raised},
+            complte: () => {//to do soemthing after the job is done}
+        });
+
+    HttpClient
+    --------------------------------------------------------
+        is a built-in service coming from 'HttpClientModule'
+        'HttpClientModule' comes form '@angular/commons/http'
+
+        HttpClient
+            get(url):Observable
+            post(url,reqBodyData):Observable
+            put(url,reqBodyData):Observable
+            delete(url):Observable
+            

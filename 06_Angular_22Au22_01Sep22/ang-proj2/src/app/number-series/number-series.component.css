@@ -1,0 +1,11 @@
+.nss{
+    border:1px solid #000000;
+    margin:5px;
+    padding:10px;
+}
+
+.nss>form,.nss>p,.nss>div{
+    margin: 5px;
+    border: 0.5px dashed #000000;
+    padding:5px;
+}

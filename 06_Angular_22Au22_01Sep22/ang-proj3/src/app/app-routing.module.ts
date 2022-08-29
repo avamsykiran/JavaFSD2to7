@@ -6,7 +6,8 @@ import { AccountHoldersListComponent } from './account-holders-list/account-hold
 const routes: Routes = [
   {path:'',pathMatch:'full',redirectTo:'/list'},
   {path:"list",component:AccountHoldersListComponent},
-  {path:"add",component:AccountHolderFormComponent}
+  {path:"add",component:AccountHolderFormComponent},
+  {path:"edit/:id",component:AccountHolderFormComponent}
 ];
 
 @NgModule({

@@ -1,1 +1,34 @@
-<p>account-holders-list works!</p>
+<h4>Account Holders</h4>
+
+<p class="alert alert-info p-4" *ngIf="!ahs && !errMsg">
+    <strong>Please wait while loading!</strong>
+</p>
+
+<p class="alert alert-danger p-4" *ngIf="!ahs && errMsg">
+    <strong>{{errMsg}}</strong>
+</p>
+
+<p class="alert alert-info p-4" *ngIf="ahs && ahs.length==0">
+    <strong>No records on the server to display</strong>
+</p>
+
+<table class="table table-bordered talbe-stripped" *ngIf="ahs && ahs.length>0">
+    <thead>
+        <th>AH#</th>
+        <th>Full Name</th>
+        <th>Mail</th>
+        <th>Mobile</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ah of ahs">
+            <td>{{ah.ahId}}</td>
+            <td>{{ah.firstName}} {{ah.lastName}}</td>
+            <td>{{ah.mailId}}</td>
+            <td>{{ah.mobile}}</td>
+            <td>
+                <a [routerLink]="['/edit',ah.ahId]" class="btn btn-sm btn-secondary">EDIT</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,1 +1,48 @@
-<p>account-holder-form works!</p>
+<div class="col-sm-4 mx-auto mt-2 p-4">
+    <h4> {{isNew?"New":"Edit"}} Account Holder</h4>
+
+    <p *ngIf="errMsg" class="alert alert-danger">
+        <strong>{{errMsg}}</strong>
+    </p>
+
+    <form (ngSubmit)="save()" #f="ngForm">
+        <div>
+            <label class="form-control-label">Account Holder Id</label>
+            <input class="form-control" type="number" name="tb1" [(ngModel)]="ah.ahId" readonly="true" />
+        </div>
+        <div>
+            <label class="form-control-label">First Name</label>
+            <input class="form-control" type="text" name="tb2" [(ngModel)]="ah.firstName" required  #fnm="ngModel" />
+            <ol *ngIf="fnm.invalid && (fnm.dirty || fnm.touched)" class="alert alert-danger">
+                <li *ngIf="fnm.errors!['required']">This field can not be left blank</li>
+            </ol>
+        </div>
+        <div>
+            <label class="form-control-label">Last Name</label>
+            <input class="form-control" type="text" name="tb3" [(ngModel)]="ah.lastName" required  #lnm="ngModel" />
+            <ol *ngIf="lnm.invalid && (lnm.dirty || lnm.touched)" class="alert alert-danger">
+                <li *ngIf="lnm.errors!['required']">This field can not be left blank</li>
+            </ol>
+        </div>
+        <div>
+            <label class="form-control-label">Mobile</label>
+            <input class="form-control" type="text" name="tb4" [(ngModel)]="ah.mobile" 
+                required pattern="[1-9][0-9]{9}" #mob="ngModel" />
+            <ol *ngIf="mob.invalid && (mob.dirty || mob.touched)" class="alert alert-danger">
+                <li *ngIf="mob.errors!['required']">This field can not be left blank</li>
+                <li *ngIf="mob.errors!['pattern']">It is supposed to be a number of 10 digits and start with a non-zero</li>
+            </ol>
+        </div>
+        <div>
+            <label class="form-control-label">Mail Id</label>
+            <input class="form-control" type="email" name="tb5" [(ngModel)]="ah.mailId" required #mid="ngModel" />
+            <ol *ngIf="mid.invalid && (mid.dirty || mid.touched)" class="alert alert-danger">
+                <li *ngIf="mid.errors!['required']">This field can not be left blank</li>
+                <li *ngIf="mid.errors!['email']">It is supposed to be a valid email id.</li>
+            </ol>
+        </div>
+        <div class="text-end p-2">
+            <button [disabled]="f.invalid" class="btn btn-sm btn-primary">SAVE</button>
+        </div>
+    </form>
+</div>

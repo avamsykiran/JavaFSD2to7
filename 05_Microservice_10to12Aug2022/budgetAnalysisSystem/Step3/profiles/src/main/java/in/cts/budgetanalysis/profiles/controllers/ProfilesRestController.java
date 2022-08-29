@@ -1,8 +1,11 @@
 package in.cts.budgetanalysis.profiles.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,11 +19,17 @@ import in.cts.budgetanalysis.profiles.exceptions.BadProfileException;
 import in.cts.budgetanalysis.profiles.services.AccountHolderService;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/")
 public class ProfilesRestController {
 
 	@Autowired
 	private AccountHolderService ahService;
+
+	@GetMapping
+	public ResponseEntity<List<AccountHolder>> getAllAccountHolders() {
+		return ResponseEntity.ok(ahService.getAll());
+	}
 	
 	@GetMapping("/{ahid}")
 	public ResponseEntity<AccountHolder> getAccountHolderByIdAction(@PathVariable("ahid") Long ahid) throws BadProfileException {

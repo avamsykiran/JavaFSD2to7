@@ -10,6 +10,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +26,7 @@ import in.cts.budgetanalysis.txns.services.AccountHolderService;
 import in.cts.budgetanalysis.txns.services.TxnService;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/")
 public class TxnsRestController {
 

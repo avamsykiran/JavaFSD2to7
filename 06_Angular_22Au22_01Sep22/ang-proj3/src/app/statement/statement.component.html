@@ -1,0 +1,56 @@
+<p *ngIf="!ah && !errMsg" class="alert alert-danger">
+    <strong>Please wait while loading data....</strong>
+</p>
+
+<p *ngIf="errMsg" class="alert alert-danger">
+    <strong>{{errMsg}}</strong>
+</p>
+
+<div *ngIf="ah">
+    <div class="col-sm-10 mx-auto mb-4 p-4 border border-priamry">
+        <table class="table">
+            <tr>
+                <th>Id</th>
+                <td>{{ah.ahId|number:'3.0-0'}}</td>
+                <th>Mail</th>
+                <td>{{ah.mailId|lowercase}}</td>
+            </tr>
+            <tr>
+                <th>Full Name</th>
+                <td>{{ah.firstName|uppercase}} {{ah.lastName|uppercase}}</td>
+                <th>Mobile</th>
+                <td>{{ah.mobile}}</td>
+            </tr>
+            <tr>
+                <th>Current Balacne</th>
+                <td>{{ah.currentBalance|currency:'INR'}}</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div *ngIf="txns && txns.length==0" class="col-sm-10 mx-auto mb-4 p-4 border border-info">
+        <p><strong>No transactions found</strong></p>
+    </div>    
+
+    <div *ngIf="txns && txns.length>0" class="col-sm-10 mx-auto mb-4 p-4 border border-secondary">
+        <table class="table table-striped">
+            <thead>
+                <th>Txn#</th>
+                <th>Date</th>
+                <th>Header</th>
+                <th>Credit</th>
+                <th>Debit</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let t of txns">
+                    <td class="text-end">{{t.txnId|number:'3.0-0'}}</td>
+                    <td class="text-center">{{t.dateOfTransaction|date:'dd-MMM-yy'}}</td>
+                    <td>{{t.header|titlecase}}</td>
+                    <td class="text-end">{{t.type=='CREDIT'?(t.amount|currency:'INR'):''}}</td>
+                    <td class="text-end">{{t.type=='DEBIT'?(t.amount|currency:'INR'):''}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

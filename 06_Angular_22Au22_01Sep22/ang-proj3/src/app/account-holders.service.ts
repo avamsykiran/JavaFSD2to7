@@ -11,7 +11,8 @@ export class AccountHoldersService {
   apiUrl:string;
 
   constructor(private httpClient : HttpClient) {
-    this.apiUrl="http://localhost:9100/";
+    //this.apiUrl="http://localhost:9100/";
+    this.apiUrl="http://localhost:9999/profiles/";
   }
 
   getAll():Observable<AccountHolder[]>{

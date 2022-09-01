@@ -19,6 +19,7 @@
         <th>Mail</th>
         <th>Mobile</th>
         <th></th>
+        <th></th>
     </thead>
     <tbody>
         <tr *ngFor="let ah of ahs">
@@ -28,6 +29,9 @@
             <td>{{ah.mobile}}</td>
             <td>
                 <a [routerLink]="['/edit',ah.ahId]" class="btn btn-sm btn-secondary">EDIT</a>
+            </td>
+            <td>
+                <a [routerLink]="['/stmt',ah.ahId]" class="btn btn-sm btn-info">STATEMENT</a>
             </td>
         </tr>
     </tbody>

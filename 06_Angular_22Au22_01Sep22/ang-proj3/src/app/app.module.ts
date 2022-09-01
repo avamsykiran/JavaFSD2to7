@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AccountHoldersListComponent } from './account-holders-list/account-holders-list.component';
 import { AccountHolderFormComponent } from './account-holder-form/account-holder-form.component';
+import { StatementComponent } from './statement/statement.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AccountHoldersListComponent,
-    AccountHolderFormComponent
+    AccountHolderFormComponent,
+    StatementComponent
   ],
   imports: [
     BrowserModule,
